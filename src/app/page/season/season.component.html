@@ -1,0 +1,6 @@
+<div class="list-group" *ngIf="season">
+  <a class="list-group-item list-group-item-action" *ngFor="let episode of season.episodes"
+     [routerLink]="['/season', season.number, 'episode', episode.number]">
+    {{episode.number}} - {{episode.title}}
+  </a>
+</div>

@@ -1,0 +1,63 @@
+<div class="p-5 mb-4 bg-light border rounded-3">
+  <h1 class="display-5 fw-bold text-center mb-3">Megas XLR</h1>
+  <div class="row">
+    <div class="col-md">
+      <img class="img-fluid" src="assets/image/poster.jpg">
+    </div>
+    <div class="col-md-9 fs-4">
+      Megas XLR is an American animated television series created by Jody Schaeffer and George Krstic
+      for
+      Cartoon Network. The series revolves around two teenage slackers: mechanic Coop and his best friend Jamie, who
+      find
+      a mecha robot from the future called Megas (Mechanized Earth Guard Attack System) in a New Jersey junkyard. Coop
+      modifies Megas and replaces his head, the control center, with a classic muscle car, and names him XLR (eXtra
+      Large
+      Robot). Together with Megas's original pilot Kiva, they must defend Earth from the evil alien race called "the
+      Glorft". The series is an homage and parody of mecha anime. Krstic was originally one of the co-creators of
+      MTV's Downtown.
+    </div>
+  </div>
+</div>
+<div class="alert alert-info fs-5 text-center" role="alert">
+  Watch episodes of Megas XLR on this website :)
+</div>
+<div class="row gap-2" *ngIf="info.seasons">
+  <div class="col-md d-grid" *ngFor="let season of info.seasons; index as i">
+    <a class="btn btn-secondary py-3 btn-lg" [routerLink]="['/season', i+1]">
+      Season {{i + 1}}
+    </a>
+  </div>
+</div>
+<div class="mt-3" *ngIf="info.pilot">
+  <h2 class="text-center">Watch the Pilot Episode</h2>
+  <vg-player>
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+
+    <vg-scrub-bar>
+      <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+
+    <vg-controls>
+      <vg-play-pause></vg-play-pause>
+      <vg-playback-button></vg-playback-button>
+
+      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+      <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+      <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+      <vg-mute></vg-mute>
+      <vg-volume></vg-volume>
+
+      <vg-fullscreen></vg-fullscreen>
+    </vg-controls>
+
+    <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto">
+      <source [src]="info.pilot.url" type="video/mp4">
+    </video>
+  </vg-player>
+</div>
