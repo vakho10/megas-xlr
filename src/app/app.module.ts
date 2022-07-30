@@ -11,8 +11,8 @@ import {HomeComponent} from './page/home/home.component';
 import {EpisodeComponent} from './page/episode/episode.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {SeasonComponent} from './page/season/season.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {FooterComponent} from './footer/footer.component';
 
 @NgModule({
   declarations: [
