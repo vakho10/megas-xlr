@@ -7,7 +7,12 @@
 
 // Then add additional custom code here
 body {
+  font-family: Arial, serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url("assets/image/bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
